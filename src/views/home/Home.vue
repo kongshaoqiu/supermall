@@ -36,7 +36,7 @@ import HomeSwiper from './childComps/HomeSwiper'
 import RecommendView from './childComps/RecommendView'
 import FeatureView from './childComps/FeatureView'
 
-
+ 
 import NavBar from '@/components/common/navbar/NavBar'
 import TabControl from '@/components/content/TabControl/TabControl'
 import GoodsList from '@/components/content/goods/GoodsList'
@@ -56,7 +56,7 @@ export default {
       HomeSwiper,
       RecommendView, 
       FeatureView,
-
+  
       NavBar,
       TabControl,
       GoodsList,

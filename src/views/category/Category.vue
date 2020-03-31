@@ -1,7 +1,13 @@
 <template>
   <div class="wra" ref="aaaa">
     <search-bar/>
-    <scroll class="content">  
+    <div v-for="(item,index) in ['k','o','n','g']" 
+         :key="(item,index)"
+         @click="itemClick(index)">
+        <span>{{item}}</span>
+         </div>
+      <div class="father">
+      <scroll class="child1">  
           <ul>
             <li>列表1</li>
             <li>列表2</li>
@@ -42,7 +48,36 @@
             <li>列表37</li>
             <li>列表38</li>
           </ul> 
-    </scroll>
+      </scroll>     
+      <div class="child2">
+        <div><span>商品</span></div>
+        <div><span>商品</span></div>
+        <div><span>商品</span></div>
+        <div><span>商品</span></div>
+        <div><span>商品</span></div>
+        <div><span>商品</span></div>
+        <div><span>商品</span></div>
+        <div><span>商品</span></div>
+        <div><span>商品</span></div>
+        <div><span>商品</span></div>
+        <div><span>商品</span></div>
+        <div><span>商品</span></div>
+        <div><span>商品</span></div>
+        <div><span>商品</span></div>
+        <div><span>商品</span></div>
+        <div><span>商品</span></div>
+        <div><span>商品</span></div>
+        <div><span>商品</span></div>
+        <div><span>商品</span></div>
+        <div><span>商品</span></div>
+        <div><span>商品</span></div>
+        <div><span>商品</span></div>
+        <div><span>商品</span></div>
+        <div><span>商品</span></div>
+        <div><span>商品</span></div>
+        <div><span>商品</span></div>
+      </div>
+      </div>
   </div>
 </template>
 
@@ -61,6 +96,26 @@ export default {
     data(){
       return{
         scroll:null
+      }
+    },
+    methods:{
+      itemClick(index){
+        switch (index) {
+          case 0:
+            console.log('k')
+            break;
+          case 1:
+            console.log('o')
+            break;
+          case 2:
+            console.log('n')
+            break;
+          case 3:
+            console.log('g')
+            break;
+          default:
+            break;
+        }
       }
     },
     //组件创建完后调用
@@ -86,13 +141,42 @@ export default {
 .wra{
   height: 100vh;
 }
- .content{
-   background-color: pink;
-    overflow: hidden;
+.father{
+    overflow: hidden; 
+    display: flex; 
     position: absolute;
-    top: 150px;
-    bottom: 45px;
-    left: 0;
-    right: 0;
+    top:150px;
+    bottom: 50px;
+    left: 0px;
+    right: 0px;
 }
+ .child1{
+   width:20%;
+   background-color:pink;
+ }
+ .child2{
+   width: 80%;
+   display: flex;
+   flex-wrap: wrap;
+   align-items: center;
+   overflow: scroll;
+ }
+ .child2>div{
+   width: 33%;
+   height: 20%;
+   margin-left: 0px;
+ }
+ .child2>div>span{
+  display:block;
+  background-color: red;
+  margin-bottom: 0px;
+  margin-top:66px;
+  text-align:center;
+ }
+ ::-webkit-scrollbar{
+   display: none;
+ }
+ li{
+   list-style: none;
+ }
 </style>
